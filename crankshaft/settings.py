@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'crankshaft.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'crankshaft_bd',
+        'NAME': 'crankshaft_db',
         'USER': 'user_crankshaft',
         'PASSWORD': 'Qwertyanapa_23',
         'HOST': 'localhost'
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 

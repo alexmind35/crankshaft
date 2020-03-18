@@ -1,0 +1,83 @@
+{% load static %}
+{% include "header_dashboard.html" %}
+<!-- end header -->
+<section class="section hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section__title">
+                    <h2 class="section__title-heading">
+
+                        Личный кабинет
+                    </h2>
+                    <p class="section__title-text">Добрый день, {{ user.username }}!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <span class="work__slider-icon work__slider-icon--right-price"></span>
+                    <div class="card__wrapper">
+                        <div class="card__heading">
+                            <h3 class="card__title">Меню</h3>
+                        </div>
+
+                        <div class="card__text">
+
+                            <ul class="admin__navigation-list" id="js-admin-nav">
+                                <li class="navigation__item navigation__item--admin">
+                                    <a class="navigation__link active" href="#js-hero">Заказы</a>
+                                </li>
+                                <li class="navigation__item navigation__item--admin">
+                                    <a class="navigation__link" href="#js-why">Контакты</a>
+                                </li>
+                                <li class="navigation__item navigation__item--admin">
+                                    <a class="navigation__link" href="#js-work">Написать Отзыв</a>
+                                </li>
+                                <li class="navigation__item navigation__item--admin">
+                                    <a class="navigation__link" href="">Настройки</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="work__slider-icon why__slider-icon--left"></span>
+                    <span class="work__slider-icon why__slider-icon--bottom"></span>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="card">
+                    <span class="work__slider-icon work__slider-icon--right-price"></span>
+
+                    <div class="card__wrapper">
+                        <div class="card__heading">
+                            <h3 class="card__title">Услуги</h3>
+                        </div>
+                        <div class="card__text">
+                            <div class="row admin__wrapper">
+                                <div class="col-lg-7">
+                                    {% block services_list %}
+
+                                    {% endblock services_list %}
+
+                                </div>
+                                <div class="col-lg-5">
+                                    {% block services_add %}
+
+                                    {% endblock services_add %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <span class="work__slider-icon why__slider-icon--left"></span>
+                <span class="work__slider-icon why__slider-icon--bottom"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- end adminka -->
+</section>
+{% include "footer.html" %}

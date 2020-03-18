@@ -1,0 +1,12 @@
+{% extends "dashboard/dashboard_page.html" %}
+{% load static %}
+
+{% block services_add %}
+
+    <form action="" class="form__services">
+        <input type="text" id="service_title" name="title" placeholder="Название..">
+        <input type="number" id="service_price" name="price" placeholder="Цена..">
+        <input type="submit" value="Добавить">
+    </form>
+
+{% endblock services_add %}

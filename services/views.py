@@ -6,6 +6,10 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from .models import Service
 
+
+def index_page(request):
+    return render(request, "landing_page.html", {'services': Service.objects.all()})
+
 class OwnerMixin(object):
     def get_queryset(self):
         qs = super(OwnerMixin, self).get_queryset()

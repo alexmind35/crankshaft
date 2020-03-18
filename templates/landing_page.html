@@ -1,0 +1,803 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <section class="section hero" id="js-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero__title">
+                        <h1>Ремонт <span>коленчатых валов</span> в Москве</h1>
+                    </div>
+                    {% for service in services %}
+                        <ul class="service__list">
+                            <li class="service__list-item">
+                                <img src="{% static 'img/icons/kolenval.png' %}"
+                                     alt="{{ service.name }}"/>{{ service.name }}
+                            </li>
+                        </ul>
+                    {% endfor %}
+                    <hr class="hr__order"/>
+                    <div class="hero__item-order">
+                        <a href="" class="button__order-link">
+                            <img class="button__order-img" src="{% static 'img/icons/order.svg' %}"
+                                 alt="Заказать услуги"/>
+                            <span class="button__order-text">Заказать <sup>услуги</sup> </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="hero__image" src="{% static 'img/kolenval.png' %}"
+                         alt="Ремонт коленчатых валов в Анапе"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /hero -->
+    <section class="section why" id="js-why">
+        <div class="container">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    Почему мы?<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-text">Шесть причин нам доверять</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-12 col-why">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--why">
+                                <img class="card__icon" src="{% static 'img/icons/why/experience.svg' %}"
+                                     alt="Многолетний опыт"/>
+                                <h3 class="card__title">Многолетний опыт</h3>
+                            </div>
+
+                            <div class="card__text">
+                                <p>
+                                    Работаем с 1993 года! Накопился огромный опыт в ремонте коленвалов различных
+                                    автомобилей.
+                                </p>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 col-why">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--why">
+                                <img class="card__icon" src="{% static 'img/icons/why/guarantee.svg' %}"
+                                     alt="Гарантия на сборку"/>
+                                <h3 class="card__title">Гарантия на сборку</h3>
+                            </div>
+
+                            <div class="card__text">
+                                <p>
+                                    Мы всегда ответственно выполняем работу. И даем гарантию на качественную сборку
+                                </p>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 col-why">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--why">
+                                <img class="card__icon" src="{% static 'img/icons/why/measurement.svg' %}"
+                                     alt="Бесплатный замер"/>
+                                <h3 class="card__title">Бесплатный замер</h3>
+                            </div>
+
+                            <div class="card__text">
+                                <p>
+                                    Каждый коленвал индивидульно и бесплатно замеряется. Точность в нашей работе очень
+                                    важна
+                                </p>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 col-why">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--why">
+                                <img class="card__icon" src="{% static 'img/icons/why/quality.svg' %}"
+                                     alt="Высокое качество"/>
+                                <h3 class="card__title">Высокое качество</h3>
+                            </div>
+
+                            <div class="card__text">
+                                <p>
+                                    Каждый заказ при передаче клиенту мы внимательно проверяем. Если возникнут
+                                    pfvtxfybz, быстро решим
+                                </p>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 col-why">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--why">
+                                <img class="card__icon" src="{% static 'img/icons/why/timeframe.svg' %}"
+                                     alt="Всегда в срок"/>
+                                <h3 class="card__title">Всегда в срок</h3>
+                            </div>
+
+                            <div class="card__text">
+                                <p>
+                                    Мы выполним работу точно в срок. Обычно это занимает около суток. Срочные заказы
+                                    оплачиваются отдельно
+                                </p>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 col-why">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--why">
+                                <img class="card__icon" src="{% static 'img/icons/why/payment.svg' %}"
+                                     alt="Любая оплата"/>
+                                <h3 class="card__title">Любая оплата</h3>
+                            </div>
+
+                            <div class="card__text">
+                                <p>
+                                    Принимаем, как наличные деньги, так и оплату по карте.
+                                </p>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end why -->
+    <!-- work -->
+    <section class="section work" id="js-work">
+        <div class="container">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    Работа<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-text">Взгляните, как мы работаем</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-sm-12 slider__main">
+                    <a class="slider__arrow slider__arrow--main slider-arrow-next">
+                        <svg class="slider__arrow-icon slider__arrow-icon--prev">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                    <div class="work__slider">
+                        <div class="work__slider-wrapper">
+                            <span class="work__slider-icon work__slider-icon--right"></span>
+
+                            <div class="work__slider-item">
+
+                                <div class="slider">
+                                    <div class="viewport">
+                                        <ul class="sliderwprapper">
+                                            <li class="slide"><img class="work__slider-img"
+                                                                   src="{% static 'img/work/work_1.jpg' %}"
+                                                                   alt="Настройка нутромера микрометром">
+                                                <span class="work__slider-text">
+                                    Настройка нутромера микрометром
+                                  </span>
+                                            </li>
+                                            <li class="slide"><img class="work__slider-img"
+                                                                   src="{% static 'img/work/work_2.jpg' %}"
+                                                                   alt="Примерка нутромера микрометром">
+                                                <span class="work__slider-text">
+                                    Примерка нутромера микрометром
+                                  </span>
+                                            </li>
+                                            <li class="slide"><img class="work__slider-img"
+                                                                   src="{% static 'img/work/work_3.jpg' %}"
+                                                                   alt="Замер нутромера микрометром">
+                                                <span class="work__slider-text">
+                                    Замер нутромера микрометром
+                                  </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <span class="work__slider-icon work__slider-icon--left"></span>
+                            <span class="work__slider-icon work__slider-icon--bottom"></span>
+
+                        </div>
+                    </div>
+                    <a class="slider__arrow slider__arrow--main slider-arrow-prev">
+                        <svg class="slider__arrow-icon slider__arrow-icon--next">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+
+                </div>
+                <div class="col-lg-2 col-sm-4 slider__small">
+                    <a class="slider__arrow slider-arrow-next">
+                        <svg class="slider__arrow-icon slider__arrow-icon--prev">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                    <div class="work__slider work__slider--small">
+
+
+                        <div class="work__slider-wrapper mini-slide active__slide">
+                            <div class="work__slider-item work__slider-item--small">
+                                <img class="work__slider-img work__slider-img--small"
+                                     src="{% static 'img/work/work_1.jpg' %}" alt="Настройка нутромера микрометром"/>
+                            </div>
+                        </div>
+                        <div class="work__slider-wrapper mini-slide">
+                            <div class="work__slider-item work__slider-item--small">
+                                <img class="work__slider-img work__slider-img--small"
+                                     src="{% static 'img/work/work_2.jpg' %}" alt="Примерка нутромера микрометром"/>
+                            </div>
+                        </div>
+                        <div class="work__slider-wrapper mini-slide">
+                            <div class="work__slider-item work__slider-item--small">
+                                <img class="work__slider-img work__slider-img--small"
+                                     src="{% static 'img/work/work_3.jpg' %}" alt="Замер нутромера микрометром"/>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <a class="slider__arrow slider-arrow-prev">
+                        <svg class="slider__arrow-icon slider__arrow-icon--next">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end  work -->
+
+    <!--price -->
+    <section class="section price" id="js-price">
+        <div class="container">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    Цены<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-text">Наши цены вас приятно удивят</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12 col-price">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--price">
+                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
+                                     alt="шлифовка коленчатых валов"/>
+                                <h3 class="card__title">шлифовка коленчатых валов</h3>
+                            </div>
+
+                            <div class="card__text card__text--price">
+                                <h4 class="card__price-count">
+                                    900 <sup>рублей</sup>
+                                </h4>
+                            </div>
+                            <div class="card__button">
+                                <a href="tel:+79184639571" class="card__button-price">Заказать</a>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12 col-price">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--price">
+                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
+                                     alt="шлифовка коленчатых валов"/>
+                                <h3 class="card__title">шлифовка коленчатых валов</h3>
+                            </div>
+
+                            <div class="card__text card__text--price">
+                                <h4 class="card__price-count">
+                                    1900 <sup>рублей</sup>
+                                </h4>
+                            </div>
+                            <div class="card__button">
+                                <a href="tel:+79184639571" class="card__button-price">Заказать</a>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12 col-price">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--price">
+                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
+                                     alt="Расточка и хонингование блоков цилиндров"/>
+                                <h3 class="card__title">Расточка и хонингование блоков цилиндров</h3>
+                            </div>
+
+                            <div class="card__text card__text--price">
+                                <h4 class="card__price-count">
+                                    900 <sup>рублей</sup>
+                                </h4>
+                            </div>
+                            <div class="card__button">
+                                <a href="tel:+79184639571" class="card__button-price">Заказать</a>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12 col-price">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper">
+                            <div class="card__heading card__heading--price">
+                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
+                                     alt="шлифовка коленчатых валов"/>
+                                <h3 class="card__title">шлифовка коленчатых валов</h3>
+                            </div>
+
+                            <div class="card__text card__text--price">
+                                <h4 class="card__price-count">
+                                    1900 <sup>рублей</sup>
+                                </h4>
+                            </div>
+                            <div class="card__button">
+                                <a href="" class="card__button-price">Заказать</a>
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- end price -->
+
+    <!--testimonials -->
+    <section class="section testimonials" id="js-testimonials">
+        <div class="container">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    Отзывы<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-text">Несколько слов от наших ценных клиентов</p>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-3 col-sm-6 col-12 col-testimonials-left">
+                    <a class="slider__testimonials slider__testimonials--left slider-testimonials-prev">
+                        <svg class="slider__testimonials-arrow slider__testimonials-arrow--prev">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper card__wrapper--small">
+                            <div class="card__heading card__heading--testimonials">
+
+                                <div class="slider">
+                                    <div class="viewport__left-testimonials">
+                                        <div class="sliderwrapper__left-testimonials">
+                                            <div class="slide__left-testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials card__photo-testimonials--small"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title card__car-title--small">Василий
+                                                            Петрицкий</h3>
+                                                        <p class="card__car-name card__car-name--small">Toyota
+                                                            Corolla</p>
+                                                        <time class="card__time card__time--small"
+                                                              datetime="2017-05-12">12.05.2017
+                                                        </time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials card__text-testimonials--small">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                            <div class="slide__left-testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials card__photo-testimonials--small"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title card__car-title--small">Александр
+                                                            Плотников</h3>
+                                                        <p class="card__car-name card__car-name--small">Toyota
+                                                            Corolla</p>
+                                                        <time class="card__time card__time--small"
+                                                              datetime="2017-05-12">12.05.2017
+                                                        </time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials card__text-testimonials--small">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                            <div class="slide__left-testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials card__photo-testimonials--small"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title card__car-title--small">Иван
+                                                            Григорьев</h3>
+                                                        <p class="card__car-name card__car-name--small">Toyota
+                                                            Corolla</p>
+                                                        <time class="card__time card__time--small"
+                                                              datetime="2017-05-12">12.05.2017
+                                                        </time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials card__text-testimonials--small">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                        </div>
+                                    </div>
+                                </div> <!-- slider -->
+
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 col-testimonials-centr">
+                    <a class="slider__testimonials slider__testimonials--left slider__testimonials--centr slider-testimonials-prev">
+                        <svg class="slider__testimonials-arrow slider__testimonials-arrow--prev">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                    <div class="card card--testimonials">
+                        <span class="work__slider-icon work__slider-icon--right-testimonials"></span>
+                        <div class="card__wrapper card__wrapper--testimonials">
+                            <div class="card__heading card__heading--testimonials">
+
+                                <div class="slider">
+                                    <div class="viewport__testimonials">
+                                        <div class="sliderwrapper__testimonials">
+
+                                            <div class="slide__testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title">Василий Петрицкий</h3>
+                                                        <p class="card__car-name">Toyota Corolla</p>
+                                                        <time class="card__time" datetime="2017-05-12">12.05.2017</time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials">
+
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                            <div class="slide__testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title">Александр Плотников</h3>
+                                                        <p class="card__car-name">Toyota Corolla</p>
+                                                        <time class="card__time" datetime="2017-05-12">12.05.2017</time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                            <div class="slide__testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title">Иван Григорьев</h3>
+                                                        <p class="card__car-name">Toyota Corolla</p>
+                                                        <time class="card__time" datetime="2017-05-12">12.05.2017</time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <span class="work__slider-icon icon__testimonials-left"></span>
+                            <span class="work__slider-icon icon__testimonials-bottom"></span>
+                        </div>
+
+                    </div>
+                    <a class="slider__testimonials slider__testimonials--right slider__testimonials--centr slider-testimonials-next">
+                        <svg class="slider__testimonials-arrow slider__testimonials-arrow--next">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                </div><!-- col-6 -->
+
+                <div class="col-lg-3 col-sm-6 col-12 col-testimonials-right">
+                    <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                        <div class="card__wrapper card__wrapper--small">
+                            <div class="card__heading card__heading--testimonials">
+
+                                <div class="slider">
+                                    <div class="viewport__right-testimonials">
+                                        <div class="sliderwrapper__right-testimonials">
+                                            <div class="slide__right-testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials card__photo-testimonials--small"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title card__car-title--small">Василий
+                                                            Петрицкий</h3>
+                                                        <p class="card__car-name card__car-name--small">Toyota
+                                                            Corolla</p>
+                                                        <time class="card__time card__time--small"
+                                                              datetime="2017-05-12">12.05.2017
+                                                        </time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials card__text-testimonials--small">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                            <div class="slide__right-testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials card__photo-testimonials--small"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title card__car-title--small">Александр
+                                                            Плотников</h3>
+                                                        <p class="card__car-name card__car-name--small">Toyota
+                                                            Corolla</p>
+                                                        <time class="card__time card__time--small"
+                                                              datetime="2017-05-12">12.05.2017
+                                                        </time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials card__text-testimonials--small">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                            <div class="slide__right-testimonials">
+                                                <div class="card__heading card__heading--testimonials">
+                                                    <img class="card__photo-testimonials card__photo-testimonials--small"
+                                                         src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                                                         alt="Отзыв"/>
+                                                    <div class="card__car">
+                                                        <h3 class="card__car-title card__car-title--small">Иван
+                                                            Григорьев</h3>
+                                                        <p class="card__car-name card__car-name--small">Toyota
+                                                            Corolla</p>
+                                                        <time class="card__time card__time--small"
+                                                              datetime="2017-05-12">12.05.2017
+                                                        </time>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card__text-testimonials card__text-testimonials--small">
+                                                    <p>
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+                                                        Обратился в первый раз. Требовалась расточка и хонинговка.
+                                                        Отличное качество! Обратился в первый раз. Требовалась расточка
+                                                        и хонинговка. Отличное качество!
+
+                                                    </p>
+                                                </div>
+                                            </div><!-- slide__testimonials -->
+                                        </div>
+                                    </div>
+                                </div> <!-- slider -->
+
+                            </div>
+                        </div>
+                        <span class="work__slider-icon why__slider-icon--left"></span>
+                        <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+                    <a class="slider__testimonials slider__testimonials--right slider-testimonials-next">
+                        <svg class="slider__testimonials-arrow slider__testimonials-arrow--next">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                </div> <!-- col-3 -->
+
+            </div> <!-- row -->
+        </div>
+    </section>
+    <!--end testimonials -->
+
+    <!--end contacts -->
+    <section class="section contacts" id="js-contacts">
+        <div class="container">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    Контакты<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-text">Мы всегда на связи, звоните, приезжайте</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 slider__main">
+
+                    <div class="work__slider">
+                        <div class="work__slider-wrapper">
+                            <span class="work__slider-icon work__slider-icon--right"></span>
+                            <div class="work__slider-item">
+                                <div class="yandex-map" id="map"></div>
+                            </div>
+                            <span class="work__slider-icon work__slider-icon--contacts-right"></span>
+                            <span class="work__slider-icon work__slider-icon--contacts-left"></span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="card__heading card__heading--conctacts">
+                        <img class="card__photo-contacts" src="{% static 'img/testimonials/testimonials_1.jpg' %}"
+                             alt="Мастер коленчатых валов"/>
+                        <div class="card__contacts">
+                            <h3 class="card__contacts-name">Александр</h3>
+                            <p class="card__contacts-profi">мастер</p>
+                        </div>
+                    </div>
+                    <ul class="conctacts__list">
+                        <li class="conctacts__list-item">
+                            <svg class="contacts__list-icon">
+                                <use xlink:href="#phone"></use>
+                            </svg>
+                            +79188000000
+                        </li>
+                        <li class="conctacts__list-item">
+                            <svg class="contacts__list-icon">
+                                <use xlink:href="#timework"></use>
+                            </svg>
+                            8.00 - 18:00 пн-сб
+                        </li>
+                        <li class="conctacts__list-item">
+                            <svg class="contacts__list-icon">
+                                <use xlink:href="#address"></use>
+                            </svg>
+                            г.Москва, ул.Промышленная д.26
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end contacts -->
+
+{% endblock %}

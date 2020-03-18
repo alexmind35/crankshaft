@@ -1,0 +1,29 @@
+{% extends "dashboard/dashboard_page.html" %}
+{% load static %}
+
+{% block services_list %}
+
+
+<ul class="checked__list">
+
+        <li class="list-item">
+
+        <span class="check--label-text">{{ service.name }}</span>
+        <h4 class="card__price-admin">{{ service.price }}<sup>₽</sup></h4>
+        <a href="">Edit</a>
+        <a href="">Delete</a>
+
+
+
+    <p>
+        <a href="{% url "service_create" %}" class="button">Добавить новую услугу</a>
+    </p>
+
+    </li>
+
+</ul>
+
+<form action="" class="form__services">
+    <input type="submit" value="Удалить">
+</form>
+{% endblock services_list  %}

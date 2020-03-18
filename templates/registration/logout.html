@@ -3,7 +3,6 @@
 {% load static %}
 
 
-
 {% block content %}
 
     <div class="row">
@@ -11,11 +10,11 @@
             <div class="section__title">
                 <h2 class="section__title-heading">
                     <span class="section__title-icon section__title-icon--left"></span>
-                    {% block head_title %} Вход{% endblock %}<span
+                    {% block head_title %}Выход{% endblock %}<span
                         class="section__title-icon section__title-icon--right"
                 ></span>
                 </h2>
-                <p class="section__title-dashboard">Авторизуйтесь, как администратор</p>
+
             </div>
         </div>
     </div>
@@ -25,18 +24,12 @@
                 <span class="work__slider-icon work__slider-icon--right-price"></span>
                 <div class="card__wrapper">
                     <div class="card__heading">
-                        <h3 class="card__title"></h3>
+                        <h3 class="card__title">Вы действительно хотите выйти?</h3>
                     </div>
-                    <div class="card__text">
-                        {% if form.errors %}
 
-                        {% endif %}
-                        <form class="login" method="POST" action="{% url 'login' %}">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <input type="hidden" name="next" value="{{ next }}"/>
-                            <p><input type="submit" value="Вход"></p>
-                        </form>
+                    <div class="card__text">
+                        <p>Если вы передумали, вы можете  <a href="{% url "login" %}">войти</a>.
+                        </p>
                     </div>
                 </div>
                 <span class="work__slider-icon why__slider-icon--left"></span>

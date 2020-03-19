@@ -10,6 +10,7 @@ from .models import Service
 def index_page(request):
     return render(request, "landing_page.html", {'services': Service.objects.all()})
 
+
 class OwnerMixin(object):
     def get_queryset(self):
         qs = super(OwnerMixin, self).get_queryset()
@@ -22,35 +23,32 @@ class OwnerEditMixin(object):
         return super(OwnerEditMixin, self).form_valid(form)
 
 
-class OwnerCourseMixin(OwnerMixin, LoginRequiredMixin):
+class OwnerServiceMixin(OwnerMixin, LoginRequiredMixin):
     model = Service
-    fields = ['subject', 'title', 'slug', 'overview']
-    success_url = reverse_lazy('manage_course_list')
+    fields = ['name', 'price']
+    success_url = reverse_lazy('manage_service_list')
 
 
-class OwnerCourseEditMixin(OwnerCourseMixin, OwnerEditMixin):
-    fields = ['subject', 'title', 'slug', 'overview']
-    success_url = reverse_lazy('manage_course_list')
-    template_name = 'courses/manage/course/form.html'
-
-class ManageCourseListView(OwnerCourseMixin, ListView):
-    template_name = 'courses/manage/course/list.html'
-
-class CourseCreateView(PermissionRequiredMixin,
-                       OwnerCourseEditMixin,
-                       CreateView):
-    permission_required = 'courses.add_course'
+class OwnerServiceEditMixin(OwnerServiceMixin, OwnerEditMixin):
+    fields = ['name', 'price']
+    success_url = reverse_lazy('manage_service_list')
+    template_name = 'dashboard/services/services_add.html'
 
 
-class CourseUpdateView(PermissionRequiredMixin,
-                       OwnerCourseEditMixin,
-                       UpdateView):
-    permission_required = 'courses.change_course'
+class ManageServiceListView(OwnerServiceMixin, ListView):
+    template_name = 'dashboard/services/services_list.html'
 
 
-class CourseDeleteView(PermissionRequiredMixin,
-                       OwnerCourseMixin,
-                       DeleteView):
-    template_name = 'courses/manage/course/delete.html'
-    success_url = reverse_lazy('manage_course_list')
-    permission_required = 'courses.delete_course'
+class ServiceCreateView(PermissionRequiredMixin, OwnerServiceEditMixin, CreateView):
+    permission_required = 'services.add_service'
+
+
+
+class ServiceUpdateView(PermissionRequiredMixin, OwnerServiceEditMixin, UpdateView):
+    permission_required = 'services.change_service'
+
+
+class ServiceDeleteView(PermissionRequiredMixin, OwnerServiceMixin, DeleteView):
+    template_name = 'dashboard/services/services_delete.html'
+    success_url = reverse_lazy('manage_service_list')
+    permission_required = 'services.delete_service'

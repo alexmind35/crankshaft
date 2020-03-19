@@ -5,24 +5,19 @@
 
 
 <ul class="checked__list">
-
+{% for service in object_list %}
         <li class="list-item">
 
         <span class="check--label-text">{{ service.name }}</span>
         <h4 class="card__price-admin">{{ service.price }}<sup>₽</sup></h4>
-        <a href="">Edit</a>
-        <a href="">Delete</a>
-
-
-
-    <p>
-        <a href="{% url "service_create" %}" class="button">Добавить новую услугу</a>
-    </p>
-
+        <a href="{% url "service_edit" service.id %}">Редактирование</a>
+        <a href="{% url "service_delete" service.id %}">Удаление</a>
     </li>
-
+    {% empty %}
+      <p>You haven't created any courses yet.</p>
+{% endfor %}
 </ul>
-
+<a href="{% url "service_create" %}" class="button">Добавить новую услугу</a>
 <form action="" class="form__services">
     <input type="submit" value="Удалить">
 </form>

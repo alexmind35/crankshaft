@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
@@ -10,6 +11,9 @@ from .models import Service
 def index_page(request):
     return render(request, "landing_page.html", {'services': Service.objects.all()})
 
+# @login_required
+# def dashboard_user_page(request):
+#     return render(request, "dashboard/dashboard_page.html")
 
 class OwnerMixin(object):
     def get_queryset(self):

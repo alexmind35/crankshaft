@@ -2,14 +2,18 @@
 
 {% block title %}Delete course{% endblock %}
 
-{% block content %}
-  <h1>Delete course "{{ object.title }}"</h1>
+{% block services_delete %}
+    <h4 class="add__service-title">
+        Удаление услуги
+    </h4>
 
-  <div class="module">
-    <form action="" method="post">
-      {% csrf_token %}
-      <p>Are you sure you want to delete "{{ object }}"?</p>
-      <input type="submit" class="button" value="Confirm">
-    </form>
-  </div>
-{% endblock %}
+    <div class="add__service">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Вы действителльно хотите удалить услугу "{{ object.name }}"?</p>
+            <div class="admin__button">
+                <input type="submit" class="button" value="Удалить">
+            </div>
+        </form>
+    </div>
+{% endblock services_delete %}

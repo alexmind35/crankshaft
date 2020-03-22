@@ -3,22 +3,30 @@
 
 {% block services_list %}
 
+    <ul class="admin__service">
+ {% for service in object_list %}
+        <li class="service__list-admin">
+            <span class="service__item-admin service__item-admin--number">{{ forloop.counter }}</span>
+            <span class="service__item-admin service__item-admin--name">{{ service.name }}</span>
+            <span class="service__item-admin service__item-admin--price">{{ service.price }}<sup>₽</sup></span>
+            <a class="service__item-admin service__item-admin--link" href="{% url "service_edit" service.id %}">
+                <svg class="service__item-link">
+                    <use xlink:href="#edit"></use>
+                </svg>
+            </a>
+            <a class="service__item-admin service__item-admin--link" href="{% url "service_delete" service.id %}">
+                <svg class="service__item-link">
+                    <use xlink:href="#delete"></use>
+                </svg>
+            </a>
+        </li>
+       {% empty %}
+            <p>You haven't created any courses yet.</p>
+        {% endfor %}
+    </ul>
+    <div class="admin__button">
+        <a href="{% url "service_create" %}" class="admin__button-link">Добавить</a>
+    </div>
 
-<ul class="checked__list">
-{% for service in object_list %}
-        <li class="list-item">
 
-        <span class="check--label-text">{{ service.name }}</span>
-        <h4 class="card__price-admin">{{ service.price }}<sup>₽</sup></h4>
-        <a href="{% url "service_edit" service.id %}">Редактирование</a>
-        <a href="{% url "service_delete" service.id %}">Удаление</a>
-    </li>
-    {% empty %}
-      <p>You haven't created any courses yet.</p>
-{% endfor %}
-</ul>
-<a href="{% url "service_create" %}" class="button">Добавить новую услугу</a>
-<form action="" class="form__services">
-    <input type="submit" value="Удалить">
-</form>
-{% endblock services_list  %}
+{% endblock services_list %}

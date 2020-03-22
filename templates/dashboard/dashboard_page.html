@@ -7,8 +7,9 @@
             <div class="col-lg-12">
                 <div class="section__title">
                     <h2 class="section__title-heading">
-
-                        Личный кабинет
+                        <span class="section__title-icon section__title-icon--left"></span>
+                        Администрирование<span class="section__title-icon section__title-icon--right"></span>
+                    </h2>
                     </h2>
                     <p class="section__title-text">Добрый день, {{ user.username }}!</p>
                 </div>
@@ -27,7 +28,7 @@
 
                             <ul class="admin__navigation-list" id="js-admin-nav">
                                 <li class="navigation__item navigation__item--admin">
-                                    <a class="navigation__link active" href="#js-hero">Заказы</a>
+                                    <a class="navigation__link active" href="#js-hero">Услуги</a>
                                 </li>
                                 <li class="navigation__item navigation__item--admin">
                                     <a class="navigation__link" href="#js-why">Контакты</a>
@@ -56,24 +57,28 @@
                         </div>
                         <div class="card__text">
                             <div class="row admin__wrapper">
-                                <div class="col-lg-7">
+                                <div class="col-lg-12">
                                     {% block services_list %}
 
                                     {% endblock services_list %}
 
-                                </div>
-                                <div class="col-lg-5">
                                     {% block services_add %}
 
                                     {% endblock services_add %}
+
+                                    {% block services_delete %}
+
+                                    {% endblock services_delete %}
+
                                 </div>
+
                             </div>
                         </div>
                     </div>
-
+                    <span class="work__slider-icon why__slider-icon--left"></span>
+                    <span class="work__slider-icon why__slider-icon--bottom"></span>
                 </div>
-                <span class="work__slider-icon why__slider-icon--left"></span>
-                <span class="work__slider-icon why__slider-icon--bottom"></span>
+
             </div>
         </div>
     </div>

@@ -2,35 +2,30 @@
 {% load static %}
 
 {% block title %}
-  {% if object %}
-    Edit course "{{ object.title }}"
-  {% else %}
-    Create a new course
-  {% endif %}
+    {% if object %}
+        Edit course "{{ object.title }}"
+    {% else %}
+        Добавить новую услугу
+    {% endif %}
 {% endblock %}
 
 {% block services_add %}
-      <h1>
-    {% if object %}
-      Edit course "{{ object.title }}"
-    {% else %}
-      Create a new course
-    {% endif %}
-  </h1>
-  <div class="module">
-    <h2>Course info</h2>
-    <form action="." method="post">
-      {{ form.as_p }}
-      {% csrf_token %}
-      <p><input type="submit" value="Save course"></p>
-    </form>
-  </div>
-
-    <form action="" class="form__services">
-        <input type="text" id="service_title" name="title" placeholder="Название..">
-        <input type="number" id="service_price" name="price" placeholder="Цена..">
-        <input type="submit" value="Добавить">
-    </form>
+    <h4 class="add__service-title">
+        {% if object %}
+            Edit course "{{ object.title }}"
+        {% else %}
+            Добавить новую услугу
+        {% endif %}
+    </h4>
+    <div class="add__service">
+        <form action="." method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <div class="admin__button">
+                <p><input type="submit" value="Добавить"></p>
+            </div>
+        </form>
+    </div>
 
 {% endblock services_add %}
 

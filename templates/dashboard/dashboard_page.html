@@ -28,16 +28,16 @@
 
                             <ul class="admin__navigation-list" id="js-admin-nav">
                                 <li class="navigation__item navigation__item--admin">
-                                    <a class="navigation__link active" href="#js-hero">Услуги</a>
+                                    <a class="navigation__link-admin active" href="{% url 'manage_service_list' %}">Услуги</a>
                                 </li>
                                 <li class="navigation__item navigation__item--admin">
-                                    <a class="navigation__link" href="#js-why">Контакты</a>
+                                    <a class="navigation__link-admin" href="{% url 'manage_contact_list' %}">Контакты</a>
                                 </li>
                                 <li class="navigation__item navigation__item--admin">
-                                    <a class="navigation__link" href="#js-work">Написать Отзыв</a>
+                                    <a class="navigation__link-admin" href="#js-work">Написать Отзыв</a>
                                 </li>
                                 <li class="navigation__item navigation__item--admin">
-                                    <a class="navigation__link" href="">Настройки</a>
+                                    <a class="navigation__link-admi" href="">Настройки</a>
                                 </li>
 
                             </ul>
@@ -58,17 +58,11 @@
                         <div class="card__text">
                             <div class="row admin__wrapper">
                                 <div class="col-lg-12">
-                                    {% block services_list %}
 
-                                    {% endblock services_list %}
+                                    {% block content %}
 
-                                    {% block services_add %}
 
-                                    {% endblock services_add %}
-
-                                    {% block services_delete %}
-
-                                    {% endblock services_delete %}
+                                    {% endblock %}
 
                                 </div>
 

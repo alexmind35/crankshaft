@@ -1351,13 +1351,17 @@ td, th {
 /* 1. Forms */
 input[type=text],
 input[type=number],
-input[type=password] {
+input[type=password],
+input[type=file],
+input[type=url]{
     background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 input[type=text],
 input[type=number],
 input[type=password],
+input[type=file],
+input[type=url],
 select {
     width: 100%;
     padding: 12px 20px;
@@ -3793,7 +3797,56 @@ input {
     text-transform: uppercase;
     box-shadow: 1px 5px 10px 3px rgba(0, 0, 0, .25);
 }
+.contact__list-admin {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0.7rem;
+}
 
+.contact__item-title {
+    font-family: "MontserratAlternates-Regular";
+    font-size: 1rem;
+}
+
+.contact__item-admin--name {
+    left: 14rem;
+    position: absolute;
+}
+
+.contact__item-admin--photo {
+   left: 6rem;
+    position: relative;
+}
+.conctacts__link-photo{
+    width: 5rem;
+    height: auto;
+}
+
+.hr__contact {
+    background-color: #dfb79936;
+    border: none;
+    content: "";
+    height: 1px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    -webkit-transform-origin: center left;
+    -ms-transform-origin: center left;
+    transform-origin: center left;
+    width: 9rem;
+}
+.navigation__link-admin {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    color: #C4C4C4;
+    text-decoration: none;
+    font-family: "MontserratAlternates-Regular";
+    font-weight: 500;
+}
 /*  Vendors libs */
 /* Slider */
 .slick-slider {

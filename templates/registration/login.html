@@ -35,7 +35,9 @@
                             {% csrf_token %}
                             {{ form.as_p }}
                             <input type="hidden" name="next" value="{{ next }}"/>
-                            <p><input type="submit" value="Вход"></p>
+                            <div class="admin__button">
+                                <input type="submit" value="Вход">
+                            </div>
                         </form>
                     </div>
                 </div>

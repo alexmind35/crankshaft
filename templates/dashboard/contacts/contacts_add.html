@@ -5,7 +5,7 @@
     {% if object %}
         Edit course "{{ object.title }}"
     {% else %}
-        Добавить новую услугу
+        Добавить новые контактные данные
     {% endif %}
 {% endblock %}
 
@@ -14,7 +14,7 @@
         {% if object %}
             Edit course "{{ object.title }}"
         {% else %}
-            Добавить новую услугу
+            Добавить новые контактные данные
         {% endif %}
     </h4>
     <div class="add__service">
@@ -22,7 +22,7 @@
             {{ form.as_p }}
             {% csrf_token %}
             <div class="admin__button">
-                <p><input type="submit" value="Добавить"></p>
+                <p><input type="submit" value="Сохранить"></p>
             </div>
         </form>
     </div>

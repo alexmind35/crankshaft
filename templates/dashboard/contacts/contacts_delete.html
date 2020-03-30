@@ -4,13 +4,13 @@
 
 {% block content %}
     <h4 class="add__service-title">
-        Удаление услуги
+        Удаление контактных данных
     </h4>
 
     <div class="add__service">
         <form action="" method="post">
             {% csrf_token %}
-            <p>Вы действителльно хотите удалить услугу "{{ object.name }}"?</p>
+            <p>Вы действителльно хотите удалить контактные данные "{{ object.name }}"?</p>
             <div class="admin__button">
                 <input type="submit" class="button" value="Удалить">
             </div>

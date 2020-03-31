@@ -8,7 +8,11 @@
             <li class="contact__list-admin">
                 <p class="contact__item-title">Фотография</p>
 
-                <p class="contact__item-admin contact__item-admin--photo"><img class="conctacts__link-photo" src="{{ contact.photo.url }}" />{{ contact.photo }}</p>
+                          {% if contact.photo %}
+                <p class="contact__item-admin contact__item-admin--photo"><img class="conctacts__link-photo" src="{{ contact.photo.url }}" /></p>
+                {% else %}
+                    <p class="contact__item-admin contact__item-admin--name">Вы не загрузили фотографию</p>
+            {% endif %}
 
 
             </li>
@@ -44,11 +48,8 @@
             </li>
     {% endfor %}
     </ul>
-   <div class="admin__button">
-        <a href="{% url "contact_create" %}" class="admin__button-link">Добавить</a>
-    </div>
        <div class="admin__button">
-        <a href="{% url "contact_edit" 4 %}" class="admin__button-link">Редактировать</a>
+        <a href="{% url "contact_edit" 10 %}" class="admin__button-link">Редактировать</a>
     </div>
 
 {% endblock %}

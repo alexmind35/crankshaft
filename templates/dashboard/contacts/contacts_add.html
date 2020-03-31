@@ -18,7 +18,7 @@
         {% endif %}
     </h4>
     <div class="add__service">
-        <form action="." method="post">
+        <form action="." method="post" enctype="multipart/form-data">
             {{ form.as_p }}
             {% csrf_token %}
             <div class="admin__button">

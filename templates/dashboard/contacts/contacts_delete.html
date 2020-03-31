@@ -8,7 +8,7 @@
     </h4>
 
     <div class="add__service">
-        <form action="" method="post">
+        <form action="" enctype="multipart/form-data">
             {% csrf_token %}
             <p>Вы действителльно хотите удалить контактные данные "{{ object.name }}"?</p>
             <div class="admin__button">

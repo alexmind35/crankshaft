@@ -5,11 +5,17 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+
+from contacts.models import Contact
 from .models import Service
 
 
 def index_page(request):
-    return render(request, "landing_page.html", {'services': Service.objects.all()})
+    return render(request, "landing_page.html", {
+        'services': Service.objects.all(),
+        'contacts': Contact.objects.all(),
+
+    })
 
 # @login_required
 # def dashboard_user_page(request):

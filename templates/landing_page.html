@@ -767,12 +767,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-4">
                     <div class="card__heading card__heading--conctacts">
-                        <img class="card__photo-contacts" src="{% static 'img/testimonials/testimonials_1.jpg' %}"
-                             alt="Мастер коленчатых валов"/>
-                        <div class="card__contacts">
-                            <h3 class="card__contacts-name">Александр</h3>
-                            <p class="card__contacts-profi">мастер</p>
-                        </div>
+                        {% for contact in contacts %}
+                            <img class="card__photo-contacts" src="{{ contact.photo.url }}"
+                                 alt="Мастер коленчатых валов"/>
+                            <div class="card__contacts">
+                                <h3 class="card__contacts-name">Александр</h3>
+                                <p class="card__contacts-profi">{{ contact.position }}</p>
+                            </div>
+                        {% endfor %}
                     </div>
                     <ul class="conctacts__list">
                         <li class="conctacts__list-item">

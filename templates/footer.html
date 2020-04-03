@@ -1,37 +1,45 @@
-  {% load static %}
-   <!-- start footer -->
-    <footer class="footer">
-        <div class="footer__copyright" id="js-copyright">
-            <a class="copyright__link" href="http://robinweb.ru/">©web</a>
-        </div>
-        <div class="footer__social">
-            <ul class="social__list">
-                <li class="social__item">
-                    <a class="social__link" href="#">
-                        <svg class="social__link-icon">
-                            <use xlink:href="#vk"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="social__item">
-                    <a class="social__link" href="#">
-                        <svg class="social__link-icon">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="social__item">
-                    <a class="social__link" href="#">
-                        <svg class="social__link-icon">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- social -->
-    </footer>
-    <!-- footer -->
+{% load static %}
+<!-- start footer -->
+<footer class="footer">
+    <div class="footer__copyright" id="js-copyright">
+        <a class="copyright__link" href="http://robinweb.ru/">©webiapi.ru</a>
+    </div>
+    <div class="footer__social">
+        <ul class="social__list">
+            {% for contact in contacts %}
+                {% if contact.vk_social %}
+                    <li class="social__item">
+                        <a class="social__link" href="{{ contact.vk_social }}">
+                            <svg class="social__link-icon">
+                                <use xlink:href="#vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if contact.fb_social %}
+                    <li class="social__item">
+                        <a class="social__link" href="{{ contact.fb_social }}">
+                            <svg class="social__link-icon">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if contact.inst_social %}
+                    <li class="social__item">
+                        <a class="social__link" href="{{ contact.inst_social }}">
+                            <svg class="social__link-icon">
+                                <use xlink:href="#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- social -->
+</footer>
+<!-- footer -->
 </div>
 <!-- wrapper -->
 

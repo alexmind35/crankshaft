@@ -1,55 +1,74 @@
 {% extends "dashboard/dashboard_page.html" %}
 {% load static %}
-
+{% block title %}Контакты{% endblock %}
 {% block content %}
-
-    <ul class="admin__contacts">
- {% for contact in object_list %}
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Фотография</p>
-
-                          {% if contact.photo %}
-                <p class="contact__item-admin contact__item-admin--photo"><img class="conctacts__link-photo" src="{{ contact.photo.url }}" /></p>
-                {% else %}
-                    <p class="contact__item-admin contact__item-admin--name">Вы не загрузили фотографию</p>
-            {% endif %}
-
-
-            </li>
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Должность:</p>
-                <p class="contact__item-admin contact__item-admin--name">{{ contact.position }}</p>
-            </li>
-            <hr class="hr__contact"/>
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Телефон:</p>
-                <p class="contact__item-admin contact__item-admin--name">{{ contact.phone }}</p>
-            </li>
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Режим работы:</p>
-                <p class="contact__item-admin contact__item-admin--name">{{ contact.working }}</p>
-            </li>
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Адрес:</p>
-                <p class="contact__item-admin contact__item-admin--name">{{ contact.address }}</p>
-            </li>
-            <hr class="hr__contact"/>
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Вконтакте:</p>
-                <p class="contact__item-admin contact__item-admin--name">{{ contact.vk_social }}</p>
-            </li>
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Одноклассники:</p>
-                <p class="contact__item-admin contact__item-admin--name">{{ contact.ok_social }}</p>
-            </li>
-            <li class="contact__list-admin">
-                <p class="contact__item-title">Фейсбук:</p>
-                <p class="contact__item-admin contact__item-admin--name">{{ contact.fb_social }}</p>
-            </li>
-    {% endfor %}
-    </ul>
-       <div class="admin__button">
-        <a href="{% url "contact_edit" 10 %}" class="admin__button-link">Редактировать</a>
+    <div class="card__heading">
+        <h3 class="card__title">Контакты</h3>
     </div>
+    <div class="card__text">
+        <div class="row admin__wrapper row__scroll">
+            <div class="col-lg-12">
+                <ul class="admin__contacts">
+                    {% for contact in object_list %}
+                        <ul class="flex__admin">
+                            <li class="contact__list-flex">
+
+                                {% if contact.photo %}
+                                    <p class=""><img
+                                            class="conctacts__link-photo"
+                                            src="{{ contact.photo.url }}"/></p>
+                                {% else %}
+                                    <p class="contact__item-admin contact__item-admin--name">Вы не загрузили
+                                        фотографию</p>
+                                {% endif %}
+                            </li>
+
+                            <li class="contact__list-flex">
+                                <p class="contact__item-title">Имя:</p>
+                                <p class="contact__item-name">{{ contact.name }}</p>
+                            </li>
+                            <li class="contact__list-flex">
+                                <p class="contact__item-title">Должность:</p>
+                                <p class="contact__item-name">{{ contact.position }}</p>
+                            </li>
+                        </ul>
+                        <hr class="hr__contact"/>
+                        <li class="contact__list-admin">
+                            <p class="contact__item-title">Телефон:</p>
+                            <p class="contact__item-admin contact__item-admin--name">{{ contact.phone }}</p>
+                        </li>
+                        <li class="contact__list-admin">
+                            <p class="contact__item-title">Режим работы:</p>
+                            <p class="contact__item-admin contact__item-admin--name">{{ contact.working }}</p>
+                        </li>
+                        <li class="contact__list-admin">
+                            <p class="contact__item-title">Адрес:</p>
+                            <p class="contact__item-admin contact__item-admin--name">{{ contact.address }}</p>
+                        </li>
+
+                        <hr class="hr__contact"/>
+                        <li class="contact__list-admin">
+                            <p class="contact__item-title">Вконтакте:</p>
+                            <p class="contact__item-admin contact__item-admin--name">
+                                <a class="active" href="{{ contact.vk_social }}">Перейти по ссылке</a>
+                            </p>
+                        </li>
+                        <li class="contact__list-admin">
+                            <p class="contact__item-title">Фейсбук:</p>
+                            <p class="contact__item-admin contact__item-admin--name">
+                                <a class="active" href="{{ contact.fb_social }}">Перейти по ссылке</a>
+                            </p>
+                        </li>
+                        <li class="contact__list-admin">
+                            <p class="contact__item-title">Инстаграм:</p>
+                            <p class="contact__item-admin contact__item-admin--name">
+                                <a class="active" href="{{ contact.inst_social }}">Перейти по ссылке</a>
+                            </p>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="admin__button">
+                    <a href="{% url "contact_edit" 10 %}" class="admin__button-link">Редактировать</a>
+                </div>
 
 {% endblock %}

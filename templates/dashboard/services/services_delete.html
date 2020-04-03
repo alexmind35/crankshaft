@@ -3,17 +3,19 @@
 {% block title %}Delete course{% endblock %}
 
 {% block content %}
-    <h4 class="add__service-title">
-        Удаление услуги
-    </h4>
-
-    <div class="add__service">
-        <form action="" method="post">
-            {% csrf_token %}
-            <p>Вы действителльно хотите удалить услугу "{{ object.name }}"?</p>
-            <div class="admin__button">
-                <input type="submit" class="button" value="Удалить">
-            </div>
-        </form>
+    <div class="card__heading">
+        <h3 class="card__title">Удаление Услуги</h3>
     </div>
+    <div class="card__text">
+        <div class="row admin__wrapper">
+            <div class="col-lg-12">
+                <div class="add__service">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <p>Вы действителльно хотите удалить услугу "{{ object.name }}"?</p>
+                        <div class="admin__button">
+                            <input type="submit" class="button" value="Удалить">
+                        </div>
+                    </form>
+                </div>
 {% endblock %}

@@ -1,0 +1,14 @@
+{% load static %}
+{% include "header_dashboard.html" %}
+<!-- end header -->
+<section class="section hero" id="js-hero">
+    <div class="container">
+        <div class="row">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</section>
+<!-- /hero -->
+{% include "footer.html" %}

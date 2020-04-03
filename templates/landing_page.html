@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="hero__title">
-                        <h1>Ремонт <span>коленчатых валов</span> в Москве</h1>
+                        <h1>Ремонт <span>коленчатых валов</span> в Анапе</h1>
                     </div>
                     {% for service in services %}
                         <ul class="service__list">
@@ -20,7 +20,7 @@
                     {% endfor %}
                     <hr class="hr__order"/>
                     <div class="hero__item-order">
-                        <a href="" class="button__order-link">
+                        <a href="#js-price" class="button__order-link">
                             <img class="button__order-img" src="{% static 'img/icons/order.svg' %}"
                                  alt="Заказать услуги"/>
                             <span class="button__order-text">Заказать <sup>услуги</sup> </span>
@@ -296,99 +296,31 @@
                 <p class="section__title-text">Наши цены вас приятно удивят</p>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-sm-6 col-12 col-price">
-                    <div class="card">
-                        <span class="work__slider-icon work__slider-icon--right-price"></span>
-                        <div class="card__wrapper">
-                            <div class="card__heading card__heading--price">
-                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
-                                     alt="шлифовка коленчатых валов"/>
-                                <h3 class="card__title">шлифовка коленчатых валов</h3>
-                            </div>
+                {% for service in services %}
+                    <div class="col-lg-3 col-sm-6 col-12 col-price">
+                        <div class="card">
+                            <span class="work__slider-icon work__slider-icon--right-price"></span>
+                            <div class="card__wrapper">
+                                <div class="card__heading card__heading--price">
+                                    <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
+                                         alt="шлифовка коленчатых валов"/>
+                                    <h3 class="card__title">{{ service.name }}</h3>
+                                </div>
 
-                            <div class="card__text card__text--price">
-                                <h4 class="card__price-count">
-                                    900 <sup>рублей</sup>
-                                </h4>
+                                <div class="card__text card__text--price">
+                                    <h4 class="card__price-count">
+                                        {{ service.price }} <sup>рублей</sup>
+                                    </h4>
+                                </div>
+                                <div class="card__button">
+                                    <a href="tel:{{ landing_phone_url }}" class="card__button-price">Заказать</a>
+                                </div>
                             </div>
-                            <div class="card__button">
-                                <a href="tel:+79184639571" class="card__button-price">Заказать</a>
-                            </div>
+                            <span class="work__slider-icon why__slider-icon--left"></span>
+                            <span class="work__slider-icon why__slider-icon--bottom"></span>
                         </div>
-                        <span class="work__slider-icon why__slider-icon--left"></span>
-                        <span class="work__slider-icon why__slider-icon--bottom"></span>
                     </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12 col-price">
-                    <div class="card">
-                        <span class="work__slider-icon work__slider-icon--right-price"></span>
-                        <div class="card__wrapper">
-                            <div class="card__heading card__heading--price">
-                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
-                                     alt="шлифовка коленчатых валов"/>
-                                <h3 class="card__title">шлифовка коленчатых валов</h3>
-                            </div>
-
-                            <div class="card__text card__text--price">
-                                <h4 class="card__price-count">
-                                    1900 <sup>рублей</sup>
-                                </h4>
-                            </div>
-                            <div class="card__button">
-                                <a href="tel:+79184639571" class="card__button-price">Заказать</a>
-                            </div>
-                        </div>
-                        <span class="work__slider-icon why__slider-icon--left"></span>
-                        <span class="work__slider-icon why__slider-icon--bottom"></span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12 col-price">
-                    <div class="card">
-                        <span class="work__slider-icon work__slider-icon--right-price"></span>
-                        <div class="card__wrapper">
-                            <div class="card__heading card__heading--price">
-                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
-                                     alt="Расточка и хонингование блоков цилиндров"/>
-                                <h3 class="card__title">Расточка и хонингование блоков цилиндров</h3>
-                            </div>
-
-                            <div class="card__text card__text--price">
-                                <h4 class="card__price-count">
-                                    900 <sup>рублей</sup>
-                                </h4>
-                            </div>
-                            <div class="card__button">
-                                <a href="tel:+79184639571" class="card__button-price">Заказать</a>
-                            </div>
-                        </div>
-                        <span class="work__slider-icon why__slider-icon--left"></span>
-                        <span class="work__slider-icon why__slider-icon--bottom"></span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12 col-price">
-                    <div class="card">
-                        <span class="work__slider-icon work__slider-icon--right-price"></span>
-                        <div class="card__wrapper">
-                            <div class="card__heading card__heading--price">
-                                <img class="card__icon card__icon--price" src="{% static 'img/icons/price.png' %}"
-                                     alt="шлифовка коленчатых валов"/>
-                                <h3 class="card__title">шлифовка коленчатых валов</h3>
-                            </div>
-
-                            <div class="card__text card__text--price">
-                                <h4 class="card__price-count">
-                                    1900 <sup>рублей</sup>
-                                </h4>
-                            </div>
-                            <div class="card__button">
-                                <a href="" class="card__button-price">Заказать</a>
-                            </div>
-                        </div>
-                        <span class="work__slider-icon why__slider-icon--left"></span>
-                        <span class="work__slider-icon why__slider-icon--bottom"></span>
-                    </div>
-                </div>
-
+                {% endfor %}
 
             </div>
         </div>
@@ -771,30 +703,32 @@
                             <img class="card__photo-contacts" src="{{ contact.photo.url }}"
                                  alt="Мастер коленчатых валов"/>
                             <div class="card__contacts">
-                                <h3 class="card__contacts-name">Александр</h3>
+                                <h3 class="card__contacts-name">{{ contact.name }}</h3>
                                 <p class="card__contacts-profi">{{ contact.position }}</p>
                             </div>
                         {% endfor %}
                     </div>
                     <ul class="conctacts__list">
-                        <li class="conctacts__list-item">
-                            <svg class="contacts__list-icon">
-                                <use xlink:href="#phone"></use>
-                            </svg>
-                            +79188000000
-                        </li>
-                        <li class="conctacts__list-item">
-                            <svg class="contacts__list-icon">
-                                <use xlink:href="#timework"></use>
-                            </svg>
-                            8.00 - 18:00 пн-сб
-                        </li>
-                        <li class="conctacts__list-item">
-                            <svg class="contacts__list-icon">
-                                <use xlink:href="#address"></use>
-                            </svg>
-                            г.Москва, ул.Промышленная д.26
-                        </li>
+                        {% for contact in contacts %}
+                            <li class="conctacts__list-item">
+                                <svg class="contacts__list-icon">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                                {{ contact.phone }}
+                            </li>
+                            <li class="conctacts__list-item">
+                                <svg class="contacts__list-icon">
+                                    <use xlink:href="#timework"></use>
+                                </svg>
+                                {{ contact.working }}
+                            </li>
+                            <li class="conctacts__list-item">
+                                <svg class="contacts__list-icon">
+                                    <use xlink:href="#address"></use>
+                                </svg>
+                                {{ contact.address }}
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

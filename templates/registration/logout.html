@@ -24,13 +24,16 @@
                 <span class="work__slider-icon work__slider-icon--right-price"></span>
                 <div class="card__wrapper">
                     <div class="card__heading">
-                        <h3 class="card__title">Вы действительно хотите выйти?</h3>
+                        <h3 class="card__title-logout">Вы действительно хотите выйти?</h3>
                     </div>
 
                     <div class="card__text">
-                        <p>Если вы передумали, вы можете  <a href="{% url "login" %}">войти</a>.
-                        </p>
+                        <p class="logout__login">Если вы передумали, вы можете <a href="{% url "login" %}">войти</a></p>
+                        <div class="admin__button">
+                            <a href="{% url 'index' %}" class="admin__button-link">Выход</a>
+                        </div>
                     </div>
+
                 </div>
                 <span class="work__slider-icon why__slider-icon--left"></span>
                 <span class="work__slider-icon why__slider-icon--bottom"></span>

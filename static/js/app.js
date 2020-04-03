@@ -1,8 +1,3 @@
-console.log("Привет, Табы");
-console.log("Привет, Модальное окно");
-console.log("Привет, Header");
-
-
 
 $(function() {
 	$(".navigation__link").on("click", function(e) {
@@ -13,10 +8,6 @@ $(function() {
 		currentBlockOffset = $(currentBlock).offset().top;
 		$('.navigation__link').removeClass('active');
 		$(this).toggleClass('active');
-/* 
-        $("html, body").animate({
-            scrollTop: currentBlockOffset - 90
-		}, 1000); */
 		
 		if(window.matchMedia('(max-width: 992px)').matches){
 			$('.navigation__list').hide();
@@ -42,8 +33,55 @@ $(function() {
   });
 });
 
+$(function () {
 
-/* Слайдер Work */
+	$('.button__order-link').on('click', function (e) {
+		$('html,body').stop().animate({
+			scrollTop: $('#js-price').offset().top
+		}, 1000);
+		e.preventDefault();
+	});
+
+});
+
+
+
+$(function () {
+			var sections = $('section'),
+				nav = $('nav'),
+				nav_height = nav.outerHeight();
+
+			$(window).on('scroll', function () {
+				var cur_pos = $(this).scrollTop();
+
+				sections.each(function () {
+					var top = $(this).offset().top - nav_height,
+						bottom = top + $(this).outerHeight();
+
+					if (cur_pos >= top && cur_pos <= bottom) {
+						nav.find('a').removeClass('active');
+						sections.removeClass('active');
+
+						$(this).addClass('active');
+						nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+					}
+				});
+			});
+
+			nav.find('a').on('click', function () {
+				var $el = $(this),
+					id = $el.attr('href');
+
+				$('html, body').animate({
+					scrollTop: $(id).offset().top - nav_height
+				}, 500);
+
+				return false;
+			});
+		});
+
+
+
 
 $(function() {	
 	var slideNow = 1;
@@ -69,8 +107,6 @@ $(function() {
     
   });
 
-
-	// setInterval(nextSlide, slideTime);
 
 	$('.slider-arrow-next').click(nextSlide);
 	$('.slider-arrow-prev').click(prevSlide);
@@ -122,7 +158,6 @@ $(function() {
 	}
 });	
 
-/* Слайдер Отзывы Центральный */
 
 $(function() {	
 	var slideNowTestimonials = 1;
@@ -134,7 +169,6 @@ $(function() {
 	$('.slider-testimonials-prev').click(prevSlideTestimonials);
 	
 
-	/* Отзывы Центральный */
 
 	function nextSlideTestimonials() {
 		if (slideNowTestimonials == slideCountTestimonials || slideNowTestimonials <=0 || slideNowTestimonials > slideCountTestimonials) {
@@ -179,7 +213,6 @@ $(function() {
 	}
 });	
 
-/* Отзывы Левый */
 
 $(function() {	
 	var slideNowLeftTestimonials = 1;
@@ -230,8 +263,7 @@ $(function() {
 		}
 
 	}
-});	
-	/* Отзывы Правый */
+});
 
 $(function() {	
 	var slideNowRightTestimonials = 1;

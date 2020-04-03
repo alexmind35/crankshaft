@@ -5,12 +5,30 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+
+import contacts
 from .models import Contact
 
 
 # @login_required
 # def dashboard_user_page(request):
 #     return render(request, "dashboard/dashboard_page.html")
+
+# Переменные из этой функции доступны на всех страницах
+def app_context(request):
+    contact_model = contacts.models.Contact.objects.get(id=10)
+    phone = contact_model.phone
+    vk = contact_model.vk_social
+    fb = contact_model.fb_social
+    inst = contact_model.inst_social
+
+    return {
+        "landing_phone_url": phone,
+        "landing_vk_url": vk,
+        "landing_fb_url": fb,
+        "landing_inst_url": inst,
+    }
+
 
 class OwnerMixin(object):
     def get_queryset(self):
@@ -26,20 +44,18 @@ class OwnerEditMixin(object):
 
 class OwnerContactMixin(OwnerMixin, LoginRequiredMixin):
     model = Contact
-    fields = ['photo', 'position', 'phone', 'working', 'address', 'vk_social', 'ok_social', 'fb_social']
+    fields = ['photo', 'name', 'position', 'phone', 'working', 'address', 'vk_social', 'fb_social', 'inst_social']
     success_url = reverse_lazy('manage_contact_list')
 
 
-
 class OwnerContactEditMixin(OwnerContactMixin, OwnerEditMixin):
-    fields = ['photo', 'position', 'phone', 'working', 'address', 'vk_social', 'ok_social', 'fb_social']
+    fields = ['photo', 'name', 'position', 'phone', 'working', 'address', 'vk_social', 'fb_social', 'inst_social']
     success_url = reverse_lazy('manage_contact_list')
     template_name = 'dashboard/contacts/contacts_add.html'
 
 
 class ManageContactListView(OwnerContactMixin, ListView):
     template_name = 'dashboard/contacts/contacts_list.html'
-
 
 
 class ContactCreateView(PermissionRequiredMixin, OwnerContactEditMixin, CreateView):

@@ -25,7 +25,7 @@ SECRET_KEY = '=yah&udlpet%m%&d$s#1bcc-(s8nqrj0&!t#284zky*+a5s@tu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -66,6 +66,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+
+                # чтобы прописать телефон на главной
+                'contacts.views.app_context'
             ],
         },
     },

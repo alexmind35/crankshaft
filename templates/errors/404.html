@@ -1,0 +1,21 @@
+{% extends "errors/error_page.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-lg-6">
+        <div class="hero__title">
+            <h1>Ошибка <span>404</span> </h1>
+            <p class="section__title-text">Данной страницы не существует!</p>
+        </div>
+        <hr class="hr__order"/>
+        <div class="hero__item-order">
+            <a href="{% url 'index' %}" class="button__order-link">Главная </a>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <img class="hero__image" src="{% static 'img/error.png' %}"
+             alt="Данной страницы не существует"/>
+    </div>
+
+{% endblock %}

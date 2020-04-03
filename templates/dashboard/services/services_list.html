@@ -2,31 +2,38 @@
 {% load static %}
 
 {% block content %}
-
-    <ul class="admin__service">
- {% for service in object_list %}
-        <li class="service__list-admin">
-            <span class="service__item-admin service__item-admin--number">{{ forloop.counter }}</span>
-            <span class="service__item-admin service__item-admin--name">{{ service.name }}</span>
-            <span class="service__item-admin service__item-admin--price">{{ service.price }}<sup>₽</sup></span>
-            <a class="service__item-admin service__item-admin--link" href="{% url "service_edit" service.id %}">
-                <svg class="service__item-link">
-                    <use xlink:href="#edit"></use>
-                </svg>
-            </a>
-            <a class="service__item-admin service__item-admin--link" href="{% url "service_delete" service.id %}">
-                <svg class="service__item-link">
-                    <use xlink:href="#delete"></use>
-                </svg>
-            </a>
-        </li>
-       {% empty %}
-            <p>You haven't created any courses yet.</p>
-        {% endfor %}
-    </ul>
-    <div class="admin__button">
-        <a href="{% url "service_create" %}" class="admin__button-link">Добавить</a>
+    <div class="card__heading">
+        <h3 class="card__title">Услуги</h3>
     </div>
+    <div class="card__text">
+        <div class="row admin__wrapper">
+            <div class="col-lg-12">
+                <ul class="admin__service">
+                    {% for service in object_list %}
+                        <li class="service__list-admin">
+                            <span class="service__item-admin service__item-admin--number">{{ forloop.counter }}</span>
+                            <span class="service__item-admin service__item-admin--name">{{ service.name }}</span>
+                            <span class="service__item-admin service__item-admin--price">{{ service.price }}<sup>₽</sup></span>
+                            <a class="service__item-admin service__item-admin--link"
+                               href="{% url "service_edit" service.id %}">
+                                <svg class="service__item-link">
+                                    <use xlink:href="#edit"></use>
+                                </svg>
+                            </a>
+                            <a class="service__item-admin service__item-admin--link"
+                               href="{% url "service_delete" service.id %}">
+                                <svg class="service__item-link">
+                                    <use xlink:href="#delete"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    {% empty %}
+                        <p>You haven't created any courses yet.</p>
+                    {% endfor %}
+                </ul>
+                <div class="admin__button">
+                    <a href="{% url "service_create" %}" class="admin__button-link">Добавить</a>
+                </div>
 
 
 {% endblock %}
